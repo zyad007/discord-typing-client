@@ -19,6 +19,8 @@ const InputModal = ({
     const [userName, setUserName] = useState('');
     const [nickName, setNickName] = useState('');
     const [url, setUrl] = useState('');
+    const [botToken, setBotToken] = useState('');
+    const [chatId, setChatId] = useState('');
 
     const closeModal = () => {
         setIsOpen(false);
@@ -37,7 +39,9 @@ const InputModal = ({
             body: JSON.stringify({
                 target_username: userName,
                 target_nickname: nickName,
-                target_url: url
+                target_url: url,
+                bot_token: botToken,
+                chat_id: chatId
             }),
             headers: {
                 'Accept': 'application/json',
@@ -87,6 +91,16 @@ const InputModal = ({
                 <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
                     <label className='w-full pl-4'>Channel URL</label>
                     <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={url} onChange={(e) => setUrl(e.target.value)} />
+                </div>
+
+                <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
+                    <label className='w-full pl-4'>Bot Token</label>
+                    <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={botToken} onChange={(e) => setBotToken(e.target.value)} />
+                </div>
+
+                <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
+                    <label className='w-full pl-4'>Chat ID</label>
+                    <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={chatId} onChange={(e) => setChatId(e.target.value)} />
                 </div>
 
                 <button className='w-20 border rounded-md border-gray-500 bg-gray-200 disabled:bg-gray-100 disabled:text-gray-500' disabled={disabled} >Add</button>
