@@ -66,7 +66,7 @@ const InputModal = ({
             onRequestClose={closeModal}
             shouldFocusAfterRender={false}
             closeTimeoutMS={200}
-            className={'shadow-xl bg-white shadow-slate-300 py-10 px-14 h-fit left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 absolute flex flex-col justify-center items-center border rounded-md text-black'}
+            className={'shadow-xl w-1/2 bg-white shadow-slate-300 py-10 px-14 h-fit left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 absolute flex flex-col justify-center items-center border rounded-md text-black'}
         >
             <form className='flex flex-col justify-center items-center w-full h-full space-y-8' onSubmit={handleSumbition} >
 
@@ -76,17 +76,17 @@ const InputModal = ({
 
                 <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
                     <label className='w-full pl-4'>Username</label>
-                    <input type="text" className=' w-full border bg-slate-100' value={userName} onChange={(e) => setUserName(e.target.value)} />
+                    <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={userName} onChange={(e) => setUserName(e.target.value)} />
                 </div>
 
                 <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
                     <label className='w-full pl-4'>Nickname</label>
-                    <input type="text" className=' w-full border bg-slate-100' value={nickName} onChange={(e) => setNickName(e.target.value)} />
+                    <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={nickName} onChange={(e) => setNickName(e.target.value)} />
                 </div>
 
                 <div className='w-full h-full flex-col flex justify-center items-center space-x-4'>
                     <label className='w-full pl-4'>Channel URL</label>
-                    <input type="text" className=' w-full border bg-slate-100' value={url} onChange={(e) => setUrl(e.target.value)} />
+                    <input type="text" className=' w-full border bg-slate-100 px-2 py-1' value={url} onChange={(e) => setUrl(e.target.value)} />
                 </div>
 
                 <button className='w-20 border rounded-md border-gray-500 bg-gray-200 disabled:bg-gray-100 disabled:text-gray-500' disabled={disabled} >Add</button>
